@@ -1,4 +1,3 @@
-# AI Foundations 101
 
 *Document **one real example of each**, with a one-sentence explanation, and publish it to a public link:*
 
