@@ -10,9 +10,9 @@ Note that an added space “ “ after the punctuation of the first sentence wou
 Learn about language model tokenization.
 How many tokens are in this text?
 
-![image.png]
+![image](image.png)
 
-![image2.png]
+![image1][image1.png]
 
 Additionally I tried counting the tokens of the same sentence but in different languages, and it would be more cost efficient for me to keep all prompting in English from now on.
 
