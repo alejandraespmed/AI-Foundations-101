@@ -4,23 +4,23 @@
 
 ### A **token count**:
 
-The sentences in grey below count as 74 characters and 15 tokens. 
+The sentences below count as 74 characters and 15 tokens. 
 Note that an added space “ “ after the punctuation of the first sentence would mean a full additional token.
 
-Learn about language model tokenization.
-How many tokens are in this text?
+### Learn about language model tokenization. 
+### How many tokens are in this text?
 
 ![image](image.png)
 
-![image1][image1.png]
+![image1](image1.png)
 
 Additionally I tried counting the tokens of the same sentence but in different languages, and it would be more cost efficient for me to keep all prompting in English from now on.
 
-![image3.png](AI-Foundations-101/image3.png)
+![image2](image2.png)
 
-![image4.png](AI-Foundations-101/image4.png)
+![image3](image3.png)
 
-![image5.png](AI-Foundations-101/image5.png)
+![image4](image4.png)
 
 ### A **context overflow** you caused:
 
