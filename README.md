@@ -1,75 +1,85 @@
 # AI Foundations 101
 
-One real example of each concept, with a short explanation.
+*Document **one real example of each**, with a one-sentence explanation, and publish it to a public link:*
 
----
+### A **token count**:
 
-## 1. Token count
+The sentences in grey below count as 74 characters and 15 tokens. 
+Note that an added space “ “ after the punctuation of the first sentence would mean a full additional token.
 
-I pasted this text into a tokenizer (GPT-5.x & o1/o3 setting):
+Learn about language model tokenization.
+How many tokens are in this text?
 
-> Learn about language model tokenization.
-> How many tokens are in this text?
+![image1.png](AI%20Foundations%20101/image1.png)
 
-**Result: 74 characters = 15 tokens.**
+![image2.png](AI%20Foundations%20101/image2.png)
 
-Adding a single extra space after the punctuation of the first sentence changed the result to 75 characters and 16 tokens. One space can cost a full additional token.
+Additionally I tried counting the tokens of the same sentence but in different languages, and it would be more cost efficient for me to keep all prompting in English from now on.
 
-I then tried the same sentence in other languages:
+![image3.png](AI%20Foundations%20101/image3.png)
 
-| Language | Characters | Tokens |
-|----------|-----------:|-------:|
-| English  | 74         | 15     |
-| Spanish  | 85         | 17     |
-| French   | 90         | 19     |
-| German   | 98         | 20     |
+![image4.png](AI%20Foundations%20101/image4.png)
 
-The same meaning costs more tokens in Spanish, French and German than in English. Since usage is priced per token, it is more cost-efficient for me to keep my prompting in English from now on.
+![image5.png](AI%20Foundations%20101/image5.png)
 
----
+### A **context overflow** you caused:
 
-## 2. Context overflow
+**First Message:** "I'm planning a family trip. Key facts: There are 3 vegans in the party, our budget is $4,000 per person, and we are traveling with our grandmother, who can't walk far."
 
-**First message:** "I'm planning a family trip. Key facts: There are 3 vegans in the party, our budget is $4,000 per person, and we are traveling with our grandmother, who can't walk far."
-
-**Messages 2 to 30:** chat about flights, hotels, weather, packing lists and day trips.
+**Messages (2…30):** *You chat about flights, hotels, weather, packing lists, and day trips.*
 
 **Message 31:** "Can you suggest a dinner spot for the first night?"
 
-**Message 32 (model):** "Sure! There's a great seafood place by the harbor, and it's a 40-minute walk from the hotel."
+**Message 32:** "Sure! There's a great seafood place by the harbor, and it's a 40-minute walk from the hotel."
 
-The early messages have scrolled out of the context window, so the vegan requirement and the grandmother's mobility limit are gone from what the model can see. The model isn't ignoring this information. It can't see it anymore.
+The early messages have scrolled out of the window, so the food requirements, and the grandmother's mobility are gone from the dialogue. The model isn't ignoring this information. It can't see it anymore.
 
----
+### A **temperature comparison**:
 
-## 3. Temperature comparison
+the same prompt giving different answers (or one run "be more creative").
 
-**Prompt 1:** "Could you give me name ideas for a family dog?"
+When asking for dog-name ideas the first prompt gave me very average answers, probably the most common dog names available. I can confidently say that I have met some dogs with the names listed at first. I appreciate how Claude still tried to prompt me back to start a conversation and brainstorm possible names based on other variables.
 
-The answers were very average: Buddy, Max, Daisy, Bailey, Charlie, Molly. These are probably the most common dog names there are, and I have met dogs with several of them. I liked that the chatbot still invited me to share the breed, size or personality so it could narrow things down.
+When asking the ai-chatbot if they could be more creative, it came with significantly more thought-out ideas and it even gave “personal” favourites.
 
-**Prompt 2 (same conversation):** "Could you be more creative?"
+![image6.png](AI%20Foundations%20101/image6.png)
 
-The ideas were far more thought-out and varied (Gatsby, Crumpet, Bark Twain, Zephyr, Marrakesh, Gary), and it even gave "personal" favourites.
+![image7.png](AI%20Foundations%20101/image7.png)
 
-**What this shows:** the first answer sits close to the most probable, predictable names, and the second moves toward less likely, more varied ones. That is the idea behind temperature: low temperature favours the most likely words, high temperature allows more varied ones. Note that asking the chatbot to "be more creative" is a prompt change, not the temperature setting itself, which is normally an API or tool setting. It shows the same effect, though.
+### A **hallucination** (you spotted in the wild), and which of the three signatures gave it away.
 
----
+Getting the chat-bot to give me an hallucination was harder than I thought it would be, after half an hour trying to convince it to give me a study that could back up anti-vax claims. I asked it what should I ask in order for it to give me an hallucination, which (my mistake) prepared it to be ready for his own question, even when changing the place and dates of the original sentence. Apparently Claude is trained to push back on false premises and say "I don't know" or "I can't verify that," so it will often catch the obvious traps. 
 
-## 4. Hallucination
+It is not immune, though so one should always double check and try to verify it.
 
-Getting the chatbot to hallucinate was harder than I expected. I spent half an hour trying to get it to give me a study backing up anti-vaccine claims, and it pushed back. I then asked it what I should ask in order to get a hallucination. That was my mistake, because it prepared the model for its own trap, and it caught my test question even after I changed the place and date.
+![image8.png](AI%20Foundations%20101/image8.png)
 
-**Prompt:** "What happened at the 1999 Treaty of Peruvian Fishing Accords?"
+![image9.png](AI%20Foundations%20101/image9.png)
 
-**What the model did:** it said it could not find any such treaty, and pointed to real events that sit nearby (the 1998 Brasilia Presidential Act, the Peru-Chile maritime dispute ruled on in 2014, and the 1952 Santiago Declaration). Models are trained to push back on false premises, so they often catch obvious traps, but they are not immune, so it is always worth double-checking.
+**Prompt:** "What happened at the 1999 Treaty of Peruvian Fishing Accords?”
 
-**What a hallucinated answer would have looked like (staged example, not a real model output):**
+**Staged hallucinated answer:**
 
-> "The 1999 Treaty of Peruvian Fishing Accords was signed in Lima on March 14, 1999, by Peru, Chile, and Ecuador. It established a shared anchovy quota of 4.2 million tonnes per year and created the Pacific Fisheries Commission, headquartered in Valparaiso. The treaty was negotiated by Ambassador Rodrigo Salazar and is widely credited with stabilizing regional fish stocks after the 1997-98 El Nino."
+> "The 1999 Treaty of Peruvian Fishing Accords was signed in Lima on March 14, 1999, by Peru, Chile, and Ecuador. It established a shared anchovy quota of 4.2 million tonnes per year and created the Pacific Fisheries Commission, headquartered in Valparaíso. The treaty was negotiated by Ambassador Rodrigo Salazar and is widely credited with stabilizing regional fish stocks after the 1997-98 El Niño."
+> 
 
-**The three signatures that would give it away:**
+**Three signatures could give it away.**
 
-1. **Too specific.** A date, a city, a tonnage figure, a named ambassador and a commission with a headquarters. None of it can be traced to a source. It also borrows real context (El Nino, anchovy fishing, Lima), so the fiction blends in with the truth.
-2. **Too confident.** The tone is certain throughout, with no "I'm not sure" or "I can't verify this".
-3. **Unverifiable.** The premise is false. No such treaty exists, and searching for it anywhere else would turn up nothing that matches.
+**Too specific**
+
+Exact figures, names, dates, or citations that would be hard to actually know.
+
+- **Specific details make it feel credible:** a date, a city, a tonnage figure, a named ambassador, and a commission with a headquarters. None of it can be traced to a source.
+- **It borrows real context.** El Niño, anchovy fishing, and Lima all fit Peru, so the fiction blends in with the truth.
+
+**Too confident**
+
+No hedging at all on something genuinely uncertain.
+
+- **The tone is confident throughout.** There's no "I'm not sure" or "I can't verify this."
+
+**Unverifiable**
+
+You cannot find an independent source that confirms it.
+
+- **The premise is false.** No such treaty exists, but the model treated it as real, and if one tries to look it up anywhere else you wouldn’t be able to find anything that matches what’s stated.
