@@ -10,17 +10,17 @@ Note that an added space “ “ after the punctuation of the first sentence wou
 Learn about language model tokenization.
 How many tokens are in this text?
 
-![image1.png](AI%20Foundations%20101/image1.png)
+![image1.png](AI-Foundations-101/image1.png)
 
-![image2.png](AI%20Foundations%20101/image2.png)
+![image2.png](AI-Foundations-101/image2.png)
 
 Additionally I tried counting the tokens of the same sentence but in different languages, and it would be more cost efficient for me to keep all prompting in English from now on.
 
-![image3.png](AI%20Foundations%20101/image3.png)
+![image3.png](AI-Foundations-101/image3.png)
 
-![image4.png](AI%20Foundations%20101/image4.png)
+![image4.png](AI-Foundations-101/image4.png)
 
-![image5.png](AI%20Foundations%20101/image5.png)
+![image5.png](AI-Foundations-101/image5.png)
 
 ### A **context overflow** you caused:
 
@@ -42,9 +42,9 @@ When asking for dog-name ideas the first prompt gave me very average answers, pr
 
 When asking the ai-chatbot if they could be more creative, it came with significantly more thought-out ideas and it even gave “personal” favourites.
 
-![image6.png](AI%20Foundations%20101/image6.png)
+![image6.png](AI-Foundations-101/image6.png)
 
-![image7.png](AI%20Foundations%20101/image7.png)
+![image7.png](AI-Foundations-101/image7.png)
 
 ### A **hallucination** (you spotted in the wild), and which of the three signatures gave it away.
 
@@ -52,9 +52,9 @@ Getting the chat-bot to give me an hallucination was harder than I thought it wo
 
 It is not immune, though so one should always double check and try to verify it.
 
-![image8.png](AI%20Foundations%20101/image8.png)
+![image8.png](AI-Foundations-101/image8.png)
 
-![image9.png](AI%20Foundations%20101/image9.png)
+![image9.png](AI-Foundations-101/image9.png)
 
 **Prompt:** "What happened at the 1999 Treaty of Peruvian Fishing Accords?”
 
