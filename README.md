@@ -42,9 +42,9 @@ When asking for dog-name ideas the first prompt gave me very average answers, pr
 
 When asking the ai-chatbot if they could be more creative, it came with significantly more thought-out ideas and it even gave “personal” favourites.
 
-![image6.png](AI-Foundations-101/image6.png)
+![image5](image5.png)
 
-![image7.png](AI-Foundations-101/image7.png)
+![image6](image6.png)
 
 ### A **hallucination** (you spotted in the wild), and which of the three signatures gave it away.
 
@@ -52,9 +52,9 @@ Getting the chat-bot to give me an hallucination was harder than I thought it wo
 
 It is not immune, though so one should always double check and try to verify it.
 
-![image8.png](AI-Foundations-101/image8.png)
+![image7](image7.png)
 
-![image9.png](AI-Foundations-101/image9.png)
+![image8](image8.png)
 
 **Prompt:** "What happened at the 1999 Treaty of Peruvian Fishing Accords?”
 
